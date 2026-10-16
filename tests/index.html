@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Testes - Mercado Central</title>
+    <style>
+      body { font-family: Consolas, monospace; background: #111; color: #ddd; padding: 20px; }
+      h1 { font-size: 1.1rem; }
+      #log div { padding: 2px 0; }
+      .pass { color: #6fdc8c; }
+      .fail { color: #ff6b6b; }
+      #summary { margin-top: 14px; font-weight: bold; }
+      button { margin-top: 12px; padding: 6px 14px; }
+    </style>
+  </head>
+  <body>
+    <h1>Testes automatizados - Mercado Central</h1>
+    <div id="log"></div>
+    <div id="summary"></div>
+    <button id="rerun" type="button">Rodar novamente</button>
+
+    <script src="../countdown.js"></script>
+    <script src="runner.js"></script>
+    <script src="tests.js"></script>
+    <script>
+      const run = () => runAll();
+      document.getElementById("rerun").addEventListener("click", run);
+      run();
+    </script>
+  </body>
+</html>

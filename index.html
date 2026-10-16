@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercado Central - Centenário</title>
+    <meta
+      name="description"
+      content="Contagem regressiva para o centenário do Mercado Central, em 7 de setembro de 2029."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="Arquivos/logo_mercado-central-belo-horizonte_Dil5Sd.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-mode="countdown">
+    <!-- Logo pequena: aparece durante as propagandas -->
+    <div class="logo-badge" aria-hidden="true">
+      <img src="Arquivos/logo_mercado-central-belo-horizonte_Dil5Sd.png" alt="" />
+    </div>
+
+    <!-- Cronômetro pequeno: só aparece durante as propagandas -->
+    <div class="mini-countdown" aria-hidden="true">
+      <span class="mini-label">Faltam</span>
+      <span class="mini-unit"><b data-unit="days">000</b>d</span>
+      <span class="mini-unit"><b data-unit="hours">00</b>h</span>
+      <span class="mini-unit"><b data-unit="minutes">00</b>m</span>
+      <span class="mini-unit"><b data-unit="seconds">00</b>s</span>
+    </div>
+
+    <!-- Tela 1: cronômetro inteiro -->
+    <section class="screen countdown-screen active" aria-labelledby="countdown-title">
+      <div class="logo-main">
+        <img
+          src="Arquivos/logo_mercado-central-belo-horizonte_Dil5Sd.png"
+          alt="Logo do Mercado Central"
+        />
+      </div>
+
+      <p class="eyebrow">Contagem regressiva</p>
+      <h1 id="countdown-title">Rumo ao centenário</h1>
+
+      <div class="timer" aria-live="off">
+        <div class="time-box">
+          <span data-unit="days">00</span>
+          <label>Dias</label>
+        </div>
+        <div class="time-box">
+          <span data-unit="hours">00</span>
+          <label>Horas</label>
+        </div>
+        <div class="time-box">
+          <span data-unit="minutes">00</span>
+          <label>Minutos</label>
+        </div>
+        <div class="time-box">
+          <span data-unit="seconds">00</span>
+          <label>Segundos</label>
+        </div>
+      </div>
+
+      <div class="date-range">
+        <div>
+          <span>Centenário do Mercado Central</span>
+          <strong id="endDate">--</strong>
+        </div>
+      </div>
+
+      <div class="tricolor" aria-hidden="true"></div>
+    </section>
+
+    <!-- Telas 2 a 4: propagandas em tela cheia -->
+    <section class="screen ad-screen ad-1" aria-label="Propaganda 1">
+      <video class="ad-video" src="videos/propaganda-1.mp4" muted loop playsinline preload="auto"></video>
+      <div class="ad-fx" aria-hidden="true">
+        <span>🥖</span><span>🥐</span><span>🍞</span><span>🧁</span><span>🥖</span><span>🥐</span>
+      </div>
+      <div class="ad-content">
+        <span class="promo-tag">Propaganda 01 · Anúncio fictício</span>
+        <h2>Padaria Pão Quente</h2>
+        <p>Pão fresquinho saindo do forno a cada hora. Venha sentir o cheiro do Mercado.</p>
+      </div>
+      <div class="ad-progress" aria-hidden="true"></div>
+    </section>
+
+    <section class="screen ad-screen ad-2" aria-label="Propaganda 2">
+      <video class="ad-video" src="videos/propaganda-2.mp4" muted loop playsinline preload="auto"></video>
+      <div class="ad-fx" aria-hidden="true">
+        <span>🧀</span><span>🧀</span><span>🥛</span><span>🧀</span><span>🥛</span><span>🧀</span>
+      </div>
+      <div class="ad-content">
+        <span class="promo-tag">Propaganda 02 · Anúncio fictício</span>
+        <h2>Casa do Queijo Mineiro</h2>
+        <p>Queijos artesanais curados com tradição. Prove antes de levar.</p>
+      </div>
+      <div class="ad-progress" aria-hidden="true"></div>
+    </section>
+
+    <section class="screen ad-screen ad-3" aria-label="Propaganda 3">
+      <video class="ad-video" src="videos/propaganda-3.mp4" muted loop playsinline preload="auto"></video>
+      <div class="ad-fx" aria-hidden="true">
+        <span>🍎</span><span>🍊</span><span>🍉</span><span>🍍</span><span>🍇</span><span>🍋</span>
+      </div>
+      <div class="ad-content">
+        <span class="promo-tag">Propaganda 03 · Anúncio fictício</span>
+        <h2>Frutaria Sabor da Terra</h2>
+        <p>Frutas fresquinhas direto do produtor para a sua mesa, todos os dias.</p>
+      </div>
+      <div class="ad-progress" aria-hidden="true"></div>
+    </section>
+
+    <script src="countdown.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
