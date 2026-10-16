@@ -175,17 +175,6 @@ h1 {
   font-weight: 400;
 }
 
-/* Faixa verde, branca e vermelha no rodapé */
-.tricolor {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1.4rem;
-  background: linear-gradient(90deg, var(--green) 0 33.33%, var(--white) 33.33% 66.66%, var(--red) 66.66% 100%);
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
-}
-
 /* ---------- Propagandas em tela cheia ---------- */
 
 .ad-screen {
@@ -286,7 +275,7 @@ h1 {
   animation-delay: 0.5s;
 }
 
-/* Barra de progresso nas cores da bandeira do mercado (por cima do vídeo) */
+/* Barra de progresso vermelha (por cima do vídeo) */
 .ad-progress {
   position: absolute;
   left: 0;
@@ -294,7 +283,7 @@ h1 {
   z-index: 3;
   width: 100%;
   height: 0.7rem;
-  background: linear-gradient(90deg, var(--green) 0 33.33%, var(--white) 33.33% 66.66%, var(--red) 66.66% 100%);
+  background: var(--red);
   transform: scaleX(0);
   transform-origin: left;
 }

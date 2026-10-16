@@ -3,8 +3,8 @@
   // Centenário do Mercado Central (hora local do aparelho, meia-noite).
   const CENTENARY_DATE = new Date(2029, 8, 7, 0, 0, 0);
 
-  // Cronômetro 40s + 3 propagandas de 30s = ciclo de 130s.
-  const DEFAULT_PHASES_MS = [40000, 30000, 30000, 30000];
+  // Cronômetro e cada uma das 3 propagandas duram 20s = ciclo de 80s.
+  const DEFAULT_PHASES_MS = [20000, 20000, 20000, 20000];
 
   function getTimeParts(totalMilliseconds) {
     const totalSeconds = Math.max(0, Math.floor(totalMilliseconds / 1000));

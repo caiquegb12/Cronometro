@@ -69,23 +69,23 @@ test("data fixa: centenário em 07/09/2029 à meia-noite", () => {
 
 // --- Ciclo cronômetro -> propagandas ---
 
-test("getPhaseIndex: durações diferentes por tela e volta ao início", () => {
-  const phases = [40, 30, 30, 30];
+test("getPhaseIndex: 20 segundos por tela e volta ao início", () => {
+  const phases = [20, 20, 20, 20];
   const at = (ms) => getPhaseIndex(ms, phases);
   assertEqual(at(0), 0, "início");
-  assertEqual(at(39), 0, "fim do cronômetro");
-  assertEqual(at(40), 1, "1ª propaganda");
-  assertEqual(at(69), 1, "fim da 1ª propaganda");
-  assertEqual(at(70), 2, "2ª propaganda");
-  assertEqual(at(100), 3, "3ª propaganda");
-  assertEqual(at(129), 3, "fim da 3ª propaganda");
-  assertEqual(at(130), 0, "novo ciclo");
+  assertEqual(at(19), 0, "fim do cronômetro");
+  assertEqual(at(20), 1, "1ª propaganda");
+  assertEqual(at(39), 1, "fim da 1ª propaganda");
+  assertEqual(at(40), 2, "2ª propaganda");
+  assertEqual(at(60), 3, "3ª propaganda");
+  assertEqual(at(79), 3, "fim da 3ª propaganda");
+  assertEqual(at(80), 0, "novo ciclo");
 });
 
-test("ciclo padrão: cronômetro 40s + 3 propagandas de 30s = 130s", () => {
-  assertEqual(DEFAULT_PHASES_MS[0], 40000, "cronômetro");
-  assertEqual(DEFAULT_PHASES_MS.slice(1).join(","), "30000,30000,30000", "propagandas");
-  assertEqual(DEFAULT_PHASES_MS.reduce((sum, ms) => sum + ms, 0), 130000, "ciclo");
+test("ciclo padrão: cronômetro e 3 propagandas de 20s = 80s", () => {
+  assertEqual(DEFAULT_PHASES_MS[0], 20000, "cronômetro");
+  assertEqual(DEFAULT_PHASES_MS.slice(1).join(","), "20000,20000,20000", "propagandas");
+  assertEqual(DEFAULT_PHASES_MS.reduce((sum, ms) => sum + ms, 0), 80000, "ciclo");
 });
 
 // --- Página real (index.html em iframe) ---
@@ -174,11 +174,11 @@ test("propagandas: cada uma é um anúncio fictício com vídeo, animação e ba
   frame.remove();
 });
 
-test("página: durações padrão aplicadas (cronômetro 40s, propagandas 30s)", async () => {
+test("página: durações padrão aplicadas (cronômetro e propagandas 20s)", async () => {
   const frame = await loadApp();
   const screens = [...frame.contentDocument.querySelectorAll(".screen")];
   const durations = screens.map((screen) => screen.style.getPropertyValue("--phase-ms"));
-  assertEqual(durations.join(","), "40000ms,30000ms,30000ms,30000ms", "durações");
+  assertEqual(durations.join(","), "20000ms,20000ms,20000ms,20000ms", "durações");
   frame.remove();
 });
 
@@ -341,7 +341,7 @@ test("TV: cronômetro cabe inteiro na tela em várias resoluções (nada cortado
   for (const [width, height] of TV_SIZES) {
     const frame = await loadApp("", width, height);
     const doc = frame.contentDocument;
-    for (const selector of [".logo-main", ".eyebrow", "h1", ".timer", ".date-range", ".tricolor"]) {
+    for (const selector of [".logo-main", ".eyebrow", "h1", ".timer", ".date-range"]) {
       const rect = doc.querySelector(`.countdown-screen ${selector}`).getBoundingClientRect();
       assertTrue(fitsInside(rect, width, height), `${selector} em ${width}x${height} ${describeRect(rect)}`);
     }
@@ -390,12 +390,14 @@ test("visual: sem toldo listrado no topo da tela", async () => {
   frame.remove();
 });
 
-test("visual: faixa tricolor no rodapé do cronômetro e barra tricolor nas propagandas", async () => {
+test("visual: cronômetro sem faixa no rodapé e anúncios com barra de progresso", async () => {
   const frame = await loadApp();
   const doc = frame.contentDocument;
-  assertTrue(doc.querySelector(".countdown-screen .tricolor"), "faixa tricolor");
+  assertEqual(doc.querySelector(".countdown-screen .tricolor"), null, "sem faixa tricolor no cronômetro");
   assertEqual(doc.querySelectorAll(".ad-progress").length, 3, "barras de progresso");
-  assertTrue(/linear-gradient/.test(frame.contentWindow.getComputedStyle(doc.querySelector(".ad-progress")).backgroundImage), "gradiente");
+  const progressStyle = frame.contentWindow.getComputedStyle(doc.querySelector(".ad-progress"));
+  assertEqual(progressStyle.backgroundImage, "none", "sem gradiente tricolor");
+  assertEqual(progressStyle.backgroundColor, "rgb(217, 15, 20)", "barra vermelha sólida");
   frame.remove();
 });
 

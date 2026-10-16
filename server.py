@@ -6,6 +6,7 @@ Logs: logs/latest.log (última execução) e logs/history.log (histórico).
 """
 import json
 import re
+import socket
 import sys
 from datetime import datetime
 from functools import partial
@@ -103,13 +104,33 @@ class Handler(SimpleHTTPRequestHandler):
         pass
 
 
+def get_local_ips():
+    ips = []
+    try:
+        hostname = socket.gethostname()
+        for family, _, _, _, sockaddr in socket.getaddrinfo(hostname, None, type=socket.SOCK_STREAM):
+            if family == socket.AF_INET:
+                ips.append(sockaddr[0])
+    except OSError:
+        pass
+    unique = []
+    seen = set()
+    for ip in ips:
+        if ip and ip not in seen and not ip.startswith("127."):
+            seen.add(ip)
+            unique.append(ip)
+    return unique
+
+
 def make_server(port):
     handler = partial(Handler, directory=str(ROOT))
-    return ThreadingHTTPServer(("127.0.0.1", port), handler)
+    return ThreadingHTTPServer(("0.0.0.0", port), handler)
 
 
 if __name__ == "__main__":
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
     print(f"Site:   http://localhost:{port}/")
+    for ip in get_local_ips():
+        print(f"Rede:   http://{ip}:{port}/")
     print(f"Testes: http://localhost:{port}/tests/")
     make_server(port).serve_forever()
