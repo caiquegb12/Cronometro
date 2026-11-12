@@ -310,19 +310,23 @@ body{margin:0}
 .mc100-page .centenary-emblem img{position:static;display:block;width:100%;max-width:100%;height:auto;transform:none;mix-blend-mode:normal}
 @media(max-width:640px){.mc100-page .countdown-emblem.centenary-emblem{width:132px;margin-bottom:17px}}
 
-/* Publicações incorporadas do perfil oficial do Mercado. */
-.mc100-page .instagram-section{background:#faf9f3;scroll-margin-top:24px}
-.mc100-page .instagram-section .eyebrow{color:#b82e25}
-.mc100-page .instagram-profile{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:1100px;margin:28px auto 22px;padding:18px 22px;background:#f1f1e5;border:1px solid #dbe1ce;border-radius:20px}
-.mc100-page .instagram-identity{display:flex;align-items:center;gap:13px;min-width:0}
-.mc100-page .instagram-avatar{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border:1px solid #b5c5a6;border-radius:50%;background:#fffdf5;flex-shrink:0}
-.mc100-page .instagram-identity strong{display:block;font-size:16px;color:var(--deep)}
-.mc100-page .instagram-identity div>span{display:block;font-size:12px;color:var(--muted)}
-.mc100-page .instagram-button{background:#b82e25;flex-shrink:0}
-.mc100-page .instagram-posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1100px;margin:auto}
-.mc100-page .instagram-post{min-width:0;border:1px solid #d9dece;border-radius:16px;overflow:hidden;background:white}
-.mc100-page .instagram-post iframe{display:block;width:100%;height:465px;border:0;background:white}
-.mc100-page .instagram-post>a{display:flex;align-items:center;justify-content:center;gap:15px;padding:12px 8px;font-size:11px;font-weight:700;color:var(--green);background:#edf1e3;border-top:1px solid #dbe1ce}
-.mc100-page .instagram-note{font-size:11px;color:var(--muted);text-align:center;margin:18px auto 0;max-width:750px}
-@media(min-width:768px) and (max-width:1100px){.mc100-page .instagram-posts{grid-template-columns:repeat(2,minmax(0,1fr))}.mc100-page .instagram-post:last-child{grid-column:1 / -1;width:calc(50% - 11px);justify-self:center}}
-@media(max-width:767px){.mc100-page .instagram-profile{flex-direction:column;text-align:center;padding:18px;gap:16px}.mc100-page .instagram-identity{text-align:left}.mc100-page .instagram-posts{grid-template-columns:1fr;max-width:500px;gap:20px}.mc100-page .instagram-post iframe{height:490px}.mc100-page .instagram-note{font-size:10px}}
+
+/* Galeria do Instagram seguindo o modelo da Home oficial. */
+@font-face{font-family:'Alfa Slab One';font-style:normal;font-weight:400;font-display:swap;src:url('assets/alfa-slab-one.ttf') format('truetype')}
+.mc100-page .instagram-section{background:#f0eee4;padding-block:56px 42px;scroll-margin-top:20px}
+.mc100-page .instagram-section>.container{width:min(1514px,calc(100% - 88px))}
+.mc100-page .instagram-section-heading{display:flex;flex-direction:column;align-items:center;gap:20px;color:var(--red);text-align:center;margin-bottom:76px}
+.mc100-page .instagram-section-heading h2{font:400 clamp(28px,2.6vw,40px)/1.25 'Alfa Slab One',Georgia,serif;letter-spacing:0;text-transform:uppercase;color:var(--red)}
+.mc100-page .instagram-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.mc100-page .instagram-tile{position:relative;display:block;aspect-ratio:3/4;overflow:hidden;background:#e0e3d6;min-width:0}
+.mc100-page .instagram-tile>img{width:100%;height:100%;object-fit:cover;object-position:center}
+.mc100-page .instagram-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:white;filter:drop-shadow(0 1px 3px #0008)}
+.mc100-page .instagram-play svg{width:50px;height:50px}
+.mc100-page .instagram-carousel{position:absolute;right:12px;top:12px;color:white;filter:drop-shadow(0 1px 2px #0006)}
+.mc100-page .instagram-carousel svg{display:block;width:25px;height:25px}
+.mc100-page .instagram-tile:hover{outline:2px solid var(--red);outline-offset:3px}
+.mc100-page .instagram-follow{text-align:center;margin-top:76px}
+.mc100-page .instagram-button{background:var(--red);color:#fff;min-width:300px;padding:11px 30px;border-radius:30px;font-size:14px;line-height:1.5;text-transform:uppercase}
+@media(max-width:1024px){.mc100-page .instagram-section>.container{width:calc(100% - 48px)}.mc100-page .instagram-section-heading{margin-bottom:42px}.mc100-page .instagram-gallery{gap:14px}.mc100-page .instagram-follow{margin-top:42px}}
+@media(max-width:767px){.mc100-page .instagram-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.mc100-page .instagram-section{padding-block:38px 34px}.mc100-page .instagram-section-heading{gap:15px;margin-bottom:32px}.mc100-page .instagram-follow{margin-top:32px}}
+@media(max-width:640px){.mc100-page .instagram-section>.container{width:calc(100% - 36px)}.mc100-page .instagram-gallery{gap:12px}.mc100-page .instagram-play svg{width:36px;height:36px}.mc100-page .instagram-carousel{right:7px;top:7px}.mc100-page .instagram-carousel svg{width:20px;height:20px}.mc100-page .instagram-button{min-width:0;width:min(100%,335px);font-size:12px;padding:11px 20px}}
