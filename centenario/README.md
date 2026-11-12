@@ -42,3 +42,7 @@ A galeria segue o modelo visual da Home: quatro imagens, indicação de vídeo/c
 É uma seleção estática; não faz atualização automática. Para trocar os posts, substitua as imagens em assets/instagram-*.jpg e seus links em index.html. Na integração ao WordPress, o plugin de feed já usado no site poderá alimentar esse mesmo layout.
 
 A fonte do título Instagram é Alfa Slab One, distribuída sob a licença em assets/OFL-Alfa-Slab-One.txt.
+
+## Convites dos eventos
+
+Na lista `agenda` de `conteudo.js`, acrescente `imagem: "assets/convite-evento.jpg"` e, opcionalmente, `imagemAlt` com uma descrição da arte. O campo `horario` permite informar intervalos. A imagem é opcional e abre ampliada ao clicar; eventos sem arte não reservam espaço para imagem. Guarde os convites em `centenario/assets/`.

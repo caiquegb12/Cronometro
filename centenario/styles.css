@@ -90,14 +90,15 @@ body{margin:0}
 .mc100-page .empty-state h3{font-size:23px}
 .mc100-page .empty-state p{font-size:13px;color:var(--muted);margin-top:6px;max-width:650px}
 .mc100-page .empty-state .outline-label{margin-left:auto}
-.mc100-page .partners{padding-top:5px;padding-bottom:50px}
+.mc100-page .partners{padding-top:5px;padding-bottom:50px;background:#f3e8d2;border-bottom:1px solid #e4d4b7}
 .mc100-page .partners .section-top h2{font-size:32px}
 .mc100-page .partners-empty{display:flex;align-items:center;justify-content:center;gap:22px;border-block:1px solid var(--line);padding:20px;margin-top:22px;text-align:center}
 .mc100-page .partners-empty p{font-size:13px;color:var(--muted);max-width:610px}
 .mc100-page .partners-list{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
 .mc100-page .partners-list:not(:empty){margin-top:25px}
-.mc100-page .partner{padding:22px;min-width:200px;max-width:280px;border:1px solid var(--line);border-radius:16px;text-align:center}
+.mc100-page .partner{box-sizing:border-box;flex:0 1 240px;display:flex;flex-direction:column;justify-content:center;padding:22px;min-width:0;max-width:280px;background:#fffaf1;border:1px solid #e4d4b7;border-radius:16px;text-align:center}
 .mc100-page .partner img{width:150px;height:85px;object-fit:contain;margin:auto}
+.mc100-page .partner img[src$="patrocinador-itambe.png"]{object-fit:cover;object-position:center;transform:scale(1.15)}
 .mc100-page .partner p{font-size:11px;margin-top:12px}
 .mc100-page .agenda-item{display:grid;grid-template-columns:150px minmax(0,1fr);gap:25px;padding:24px 0;border-bottom:1px solid var(--line)}
 .mc100-page .agenda-item time{font-size:14px;font-weight:bold}
@@ -177,7 +178,7 @@ body{margin:0}
 .mc100-page .partners{padding-top:0;padding-bottom:35px}
 .mc100-page .partners-empty{flex-direction:column;padding:18px 8px;gap:14px}
 .mc100-page .partners .section-top h2{font-size:30px}
-.mc100-page .partner{width:100%;max-width:none}
+.mc100-page .partner{flex-basis:100%;width:100%;max-width:none}
 .mc100-page .agenda-item{grid-template-columns:1fr;gap:10px}
 .mc100-page .closing{padding-block:32px}
 .mc100-page .closing h2{font-size:30px}
@@ -330,3 +331,32 @@ body{margin:0}
 @media(max-width:1024px){.mc100-page .instagram-section>.container{width:calc(100% - 48px)}.mc100-page .instagram-section-heading{margin-bottom:42px}.mc100-page .instagram-gallery{gap:14px}.mc100-page .instagram-follow{margin-top:42px}}
 @media(max-width:767px){.mc100-page .instagram-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.mc100-page .instagram-section{padding-block:38px 34px}.mc100-page .instagram-section-heading{gap:15px;margin-bottom:32px}.mc100-page .instagram-follow{margin-top:32px}}
 @media(max-width:640px){.mc100-page .instagram-section>.container{width:calc(100% - 36px)}.mc100-page .instagram-gallery{gap:12px}.mc100-page .instagram-play svg{width:36px;height:36px}.mc100-page .instagram-carousel{right:7px;top:7px}.mc100-page .instagram-carousel svg{width:20px;height:20px}.mc100-page .instagram-button{min-width:0;width:min(100%,335px);font-size:12px;padding:11px 20px}}
+
+/* Programação: cartões com convite opcional. */
+.mc100-page .program{background:radial-gradient(ellipse at top left,#e94c3b 0,transparent 60%),linear-gradient(135deg,#c53228,#a92521);border-block:1px solid #a92521}
+.mc100-page .program .section-top{color:#fff7e9}
+.mc100-page .program .status{background:#fff0df;color:#92251f;border-color:#fff0df}
+.mc100-page #agenda-list{display:grid;gap:16px;margin-top:32px}
+.mc100-page .agenda-item{grid-template-columns:210px minmax(0,1fr);align-items:center;gap:28px;padding:26px;background:#fffaf1;color:#502e28;border:1px solid #f3d6c7;border-left:4px solid #f1b18c;border-radius:18px;box-shadow:0 5px 18px #65150f20}
+.mc100-page .agenda-date{display:flex;flex-direction:column;gap:8px;align-self:stretch;justify-content:center;padding:18px;background:#f9e3d8;border-radius:12px;color:#92251f}
+.mc100-page .agenda-date span{font-size:12px;font-weight:normal}
+.mc100-page .agenda-date strong{font-size:20px;line-height:1.35;white-space:nowrap}
+.mc100-page .agenda-copy h3{font-size:24px}
+.mc100-page .agenda-location{color:#a13027;font-weight:700}
+.mc100-page .agenda-item.has-invite{grid-template-columns:210px minmax(0,1fr) 200px}
+.mc100-page .agenda-invite{position:relative;width:100%;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--cream);cursor:zoom-in}
+.mc100-page .agenda-invite img{width:100%;height:210px;object-fit:contain}
+.mc100-page .agenda-invite span{display:block;padding:8px;font-size:12px;color:#92251f;background:#f9e3d8}
+.mc100-page .invite-dialog{width:fit-content;max-width:92vw;max-height:92vh;padding:48px 16px 16px;border:0;border-radius:16px;background:#fffdf6;box-shadow:0 20px 80px #0005}
+.mc100-page .invite-dialog::backdrop{background:#102719cc}
+.mc100-page .invite-dialog img{max-height:78vh;width:auto;object-fit:contain}
+.mc100-page .invite-close{position:absolute;right:14px;top:10px;border:0;border-radius:8px;background:#a92521;color:white;padding:4px 14px;cursor:pointer}
+@media(max-width:800px){
+.mc100-page .agenda-item,.mc100-page .agenda-item.has-invite{grid-template-columns:1fr;gap:18px;padding:20px}
+.mc100-page .agenda-date{flex-direction:row;justify-content:space-between;align-items:center;gap:14px;padding:12px 16px}
+.mc100-page .agenda-date strong{font-size:17px}
+.mc100-page .agenda-invite{grid-row:1;max-width:360px;justify-self:center}
+.mc100-page .agenda-invite img{height:280px}
+}
+
+@media(max-width:480px){.mc100-page .agenda-date{flex-direction:column;align-items:flex-start;gap:6px}}

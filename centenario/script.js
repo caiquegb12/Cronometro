@@ -57,16 +57,36 @@
     if (key === 'agenda' && list.childElementCount) root.querySelector('.status').textContent = 'Programação do centenário';
   }
   function link(parent, value, label) { const url = safeUrl(value); if (url) { const a = make('a', label, 'text-link'); a.href = url; parent.append(a); } }
+  const inviteDialog = make('dialog', '', 'invite-dialog');
+  inviteDialog.setAttribute('aria-label', 'Convite do evento');
+  const closeInvite = make('button', 'Fechar ×', 'invite-close');
+  closeInvite.type = 'button';
+  const inviteImage = make('img');
+  inviteDialog.append(closeInvite, inviteImage); root.append(inviteDialog);
+  closeInvite.addEventListener('click', () => inviteDialog.close());
+  inviteDialog.addEventListener('click', event => { if (event.target === inviteDialog) inviteDialog.close(); });
   render('agenda', '#agenda-list', '#agenda-empty', item => {
     const article = make('article', '', 'agenda-item');
     const date = new Date(item.data);
     if (!Number.isFinite(date.getTime()) || !/T.*(Z|[+-]\d{2}:\d{2})$/.test(item.data)) return null;
-    const time = make('time', new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'America/Sao_Paulo' }).format(date));
+    const time = make('time', '', 'agenda-date');
+    time.append(make('span', new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'America/Sao_Paulo' }).format(date)), make('strong', item.horario || new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' }).format(date)));
     time.dateTime = date.toISOString(); article.append(time);
-    const copy = make('div'); copy.append(make('h3', item.titulo));
-    copy.append(make('p', `${new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' }).format(date)}${item.local ? ` · ${item.local}` : ''}`));
+    const copy = make('div', '', 'agenda-copy'); copy.append(make('h3', item.titulo));
+    if (item.local) copy.append(make('p', item.local, 'agenda-location'));
     if (item.descricao) copy.append(make('p', item.descricao));
-    link(copy, item.url, 'Ver detalhes ↗'); article.append(copy); return article;
+    link(copy, item.url, 'Ver detalhes ↗'); article.append(copy);
+    const imageUrl = safeUrl(item.imagem);
+    if (imageUrl) {
+      const button = make('button', '', 'agenda-invite'); button.type = 'button';
+      button.setAttribute('aria-label', `Ampliar convite: ${item.titulo}`);
+      const image = make('img'); image.src = imageUrl; image.alt = item.imagemAlt || `Convite: ${item.titulo}`; image.loading = 'lazy';
+      button.append(image, make('span', 'Ampliar convite ↗'));
+      image.addEventListener('error', () => { button.remove(); article.classList.remove('has-invite'); }, { once: true });
+      button.addEventListener('click', () => { inviteImage.src = imageUrl; inviteImage.alt = image.alt; inviteDialog.showModal(); });
+      article.classList.add('has-invite'); article.append(button);
+    }
+    return article;
   });
   render('novidades', '#news-list', '#news-empty', item => {
     const article = make('article', '', 'news-item'); article.append(make('h3', item.titulo)); if (item.resumo) article.append(make('p', item.resumo)); link(article, item.url, 'Ler publicação ↗'); return article;
