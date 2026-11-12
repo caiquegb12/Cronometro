@@ -74,8 +74,8 @@ body{margin:0}
 /* Animação da marca integrada à seção editorial. */
 .mc100-page .news-band{background:#f0efe5;border-block:1px solid #e1e2d5;scroll-margin-top:20px}
 .mc100-page .news-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;margin-top:32px}
-.mc100-page .film{min-width:0;background:#e8e8e3;border-radius:20px;overflow:hidden}
-.mc100-page .film video{width:100%;aspect-ratio:16/9;object-fit:contain;background:#e8e8e3}
+.mc100-page .film{min-width:0;background:transparent;overflow:hidden}
+.mc100-page .film video{width:100%;aspect-ratio:16/9;object-fit:contain;background:transparent;filter:brightness(1.12);mix-blend-mode:multiply}
 .mc100-page .news-copy{text-align:center;max-width:460px;margin:auto}
 .mc100-page .editorial-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5b6e49}
 .mc100-page .news-copy h3{font-size:clamp(29px,3vw,40px);margin:14px 0 20px}
@@ -169,7 +169,6 @@ body{margin:0}
 .mc100-page .photo-signature span{font-size:10px}
 .mc100-page .photo-signature strong{font-size:22px}
 .mc100-page .news-layout{gap:25px;margin-top:25px}
-.mc100-page .film{border-radius:16px}
 .mc100-page .program .section-top{flex-direction:column;text-align:center;gap:16px}
 .mc100-page .empty-state{flex-direction:column;text-align:center;gap:13px;padding:21px 18px}
 .mc100-page .empty-state .outline-label{margin-left:0}
