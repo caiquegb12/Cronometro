@@ -34,3 +34,7 @@ Na raiz do repositório: `python -m http.server 8000`. Abra http://localhost:800
 Identidade e vídeo do centenário fornecidos pelo responsável pelo projeto. Fotografias, símbolos e marcas institucionais obtidos do site oficial do Mercado Central para a proposta. A fonte Nunito está distribuída sob a licença em `assets/OFL-Nunito.txt`.
 
 A proposta visual e os conteúdos estão sujeitos à aprovação do marketing. A publicação não altera o site mercadocentral.com.br.
+
+## Instagram
+
+A seção incorpora uma seleção de três publicações públicas de `@mercadocentralbh`, identificadas no site oficial. Não é um feed automático: novos posts podem ser escolhidos pelo marketing e seus links atualizados em `index.html`. Cada iframe usa a URL pública do post terminada em `/embed/`, com carregamento adiado e um link externo alternativo. A incorporação depende da disponibilidade do Instagram e das preferências do navegador do visitante. Na integração ao WordPress, pode ser substituída pelo plugin de feed já usado no site oficial.
