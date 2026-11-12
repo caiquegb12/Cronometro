@@ -304,3 +304,8 @@ body{margin:0}
 .mc100-page .floating-countdown .floating-close{color:var(--green)}
 
 .mc100-page .floating-countdown .floating-units small{font-size:12px;line-height:1.25}
+
+/* Marca do centenário completa, sem o recorte circular do símbolo antigo. */
+.mc100-page .countdown-emblem.centenary-emblem{width:154px;height:auto;margin:0 auto 18px;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible}
+.mc100-page .centenary-emblem img{position:static;display:block;width:100%;max-width:100%;height:auto;transform:none;mix-blend-mode:multiply}
+@media(max-width:640px){.mc100-page .countdown-emblem.centenary-emblem{width:132px;margin-bottom:17px}}
