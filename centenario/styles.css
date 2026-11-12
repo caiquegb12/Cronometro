@@ -1,0 +1,306 @@
+body{margin:0}
+.mc100-page{--green:#2b7846;--deep:#205d36;--red:#e7362a;--cream:#f8f5e5;--ink:#21452f;--muted:#576654;--line:#d7dccb;font:16px/1.7 Arial,Helvetica,sans-serif;color:var(--ink);background:#faf9f3}
+.mc100-page *{box-sizing:border-box}
+.mc100-page [hidden]{display:none!important}
+.mc100-page h1,.mc100-page h2,.mc100-page h3,.mc100-page p,.mc100-page figure{margin:0}
+.mc100-page a{color:inherit;text-decoration:none}
+.mc100-page img,.mc100-page video{max-width:100%;display:block}
+.mc100-page button{font:inherit}
+.mc100-page .container{width:min(1240px,calc(100% - 88px));margin-inline:auto}
+.mc100-page .eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+.mc100-page h2{font:normal clamp(32px,3.2vw,46px)/1.13 Georgia,'Times New Roman',serif;letter-spacing:-.03em}
+.mc100-page h2 em{font-weight:normal;color:var(--green)}
+.mc100-page h3{font:normal 25px/1.25 Georgia,serif}
+.mc100-page .section{padding-block:62px;scroll-margin-top:24px}
+.mc100-page .section-top{display:flex;flex-direction:column;align-items:center;text-align:center;gap:15px}
+.mc100-page .section-top h2{margin-top:11px}
+.mc100-page .small-note{font-size:13px;color:var(--muted)}
+.mc100-page .text-link{display:inline-flex;gap:24px;align-items:center;border-bottom:1px solid #91a88b;font-size:13px;font-weight:700;padding-bottom:5px;margin-top:9px}
+.mc100-page .button{display:inline-flex;align-items:center;justify-content:center;gap:24px;padding:13px 23px;border-radius:30px;font-size:12px;font-weight:700;background:var(--green);color:white}
+.mc100-page .button span{font-size:20px}
+.mc100-page a:hover{text-decoration:underline;text-underline-offset:5px}
+.mc100-page a:focus-visible,.mc100-page button:focus-visible{outline:3px solid var(--red);outline-offset:5px}
+.skip{position:absolute;left:12px;top:-100px;background:#fff;color:#205d36;padding:12px;z-index:100}
+.skip:focus{top:12px}
+/* Cabeçalho: composição e cores do site oficial. */
+.mc100-page .official-header{background:var(--cream)}
+.mc100-page .opening-bar{background:var(--red);color:var(--cream);text-align:center;padding:10px 20px}
+.mc100-page .opening-bar p{font:700 12px/16px Arial,sans-serif;letter-spacing:.3px;max-width:1600px;margin:auto}
+.mc100-page .header-inner{width:100%;max-width:1600px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) clamp(220px,23vw,350px) minmax(0,1fr);align-items:center;padding:10px;min-height:178px}
+.mc100-page .brand{grid-column:2;grid-row:1;justify-self:center;width:80%;padding-bottom:19px}
+.mc100-page .brand img{width:100%;height:130px;object-fit:contain}
+.mc100-page #centenario-menu{display:contents}
+.mc100-page .nav-side{display:flex;justify-content:center;align-items:center;flex-wrap:nowrap;gap:clamp(8px,1vw,18px);padding:10px 8px;min-width:0}
+.mc100-page .nav-left{grid-column:1;grid-row:1}
+.mc100-page .nav-right{grid-column:3;grid-row:1}
+.mc100-page #centenario-menu a{font:900 clamp(10px,.82vw,13px)/1.3 Arial,sans-serif;text-transform:uppercase;color:var(--red);text-align:center;white-space:nowrap;flex-shrink:0}
+.mc100-page #centenario-menu a:hover,.mc100-page #centenario-menu a[aria-current]{color:var(--green);text-decoration:none}
+.mc100-page .menu-toggle{display:none}
+/* O cronômetro é o primeiro e principal elemento da página. */
+.mc100-page .hero{padding-top:20px;background:var(--cream)}
+.mc100-page .countdown-wrap{width:min(1240px,calc(100% - 88px));max-width:1240px;margin-inline:auto;padding:30px 40px 34px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center;background:radial-gradient(ellipse at 50% 10%,#f4f5e9 0%,#e8efdd 90%);border:1px solid #b8c9a7;border-radius:28px;box-shadow:0 8px 24px #205d3608;overflow:hidden}
+.mc100-page .countdown-heading{width:100%;max-width:960px;text-align:center}
+.mc100-page .countdown-emblem{position:relative;width:82px;height:82px;margin:0 auto 18px;overflow:hidden;border:3px solid var(--green);border-radius:50%;background:white;box-shadow:0 3px 0 var(--deep)}
+.mc100-page .countdown-emblem img{position:absolute;left:50%;top:50%;width:165%;max-width:none;height:auto;transform:translate(-50%,-50%)}
+.mc100-page .countdown-heading .eyebrow{display:inline-block;font-size:clamp(11px,1.15vw,16px);letter-spacing:.08em;padding:6px 18px;border-radius:30px;background:#e0e9d4;color:var(--green)}
+.mc100-page #timer-title{font:700 clamp(37px,4.8vw,66px)/1.12 Georgia,'Times New Roman',serif;letter-spacing:-.04em;color:var(--deep);margin-top:15px}
+.mc100-page #timer-title em{font-style:normal;color:var(--green)}
+.mc100-page .timer{width:min(100%,860px);display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:22px;padding-bottom:5px}
+.mc100-page .timer div{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:19px 10px 17px;border:1px solid #9fb593;border-radius:24px;background:#fffdf6;box-shadow:0 5px 0 #c6d4b8}
+.mc100-page .timer strong{font:700 clamp(44px,5.6vw,78px)/1.05 Georgia,'Times New Roman',serif;font-variant-numeric:tabular-nums;letter-spacing:-.025em;color:var(--green)}
+.mc100-page .timer span{font-size:clamp(11px,1vw,14px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#fffdf5;background:var(--green);padding:4px 15px;border-radius:30px;margin-top:13px}
+.mc100-page .timer i{display:none}
+.mc100-page .centenary-date{display:flex;flex-direction:column;align-items:center;gap:4px;width:min(100%,530px);padding:13px 24px 15px;border-radius:20px;background:var(--green);color:#fffdf5}
+.mc100-page .centenary-date>span{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.mc100-page .centenary-date time{font:700 clamp(23px,2.5vw,32px)/1.35 'Nunito Countdown',Arial,sans-serif;letter-spacing:-.02em}
+.mc100-page .centenary-date small{font-size:10px;letter-spacing:.06em}
+.mc100-page #celebration{font-size:20px;font-weight:bold}
+.mc100-page .section-nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px 28px;padding-block:23px;font-size:12px;font-weight:700;color:var(--green)}
+.mc100-page .section-nav .nav-mini-logo{display:block;width:18px;height:18px;object-fit:contain;flex-shrink:0}
+/* Apresentação única, com fotografias reais e sem repetir a data. */
+.mc100-page .history{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:center}
+.mc100-page .history-copy{text-align:center;max-width:490px;margin:auto}
+.mc100-page .history h2{margin:15px 0 22px;font-size:clamp(36px,3.6vw,52px)}
+.mc100-page .history-copy>p:not(.eyebrow){font-size:14px;color:var(--muted);margin-bottom:15px}
+.mc100-page .photo-mosaic{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;min-width:0}
+.mc100-page .photo-main{grid-column:1 / -1;position:relative;border-radius:22px 22px 8px 8px;overflow:hidden}
+.mc100-page .photo-main img{width:100%;height:220px;object-fit:cover;object-position:center 38%}
+.mc100-page .photo-main figcaption,.mc100-page .photo-detail figcaption{position:absolute;inset:auto 0 0;padding:26px 15px 10px;color:white;background:linear-gradient(transparent,#102c22b3);font-size:11px}
+.mc100-page .photo-detail{position:relative;border-radius:8px 8px 8px 22px;overflow:hidden}
+.mc100-page .photo-detail img{width:100%;height:130px;object-fit:cover;object-position:62% center}
+.mc100-page .photo-signature{display:flex;flex-direction:column;align-items:center;justify-content:center;background:#e9edde;border-radius:8px 8px 22px 8px;text-align:center;padding:14px}
+.mc100-page .photo-signature span{font-size:12px}
+.mc100-page .photo-signature strong{font:normal clamp(21px,2vw,28px)/1.2 Georgia,serif;max-width:170px;margin-top:5px}
+/* Animação da marca integrada à seção editorial. */
+.mc100-page .news-band{background:#f0efe5;border-block:1px solid #e1e2d5;scroll-margin-top:20px}
+.mc100-page .news-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;margin-top:32px}
+.mc100-page .film{min-width:0;background:#e8e8e3;border-radius:20px;overflow:hidden}
+.mc100-page .film video{width:100%;aspect-ratio:16/9;object-fit:contain;background:#e8e8e3}
+.mc100-page .news-copy{text-align:center;max-width:460px;margin:auto}
+.mc100-page .editorial-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5b6e49}
+.mc100-page .news-copy h3{font-size:clamp(29px,3vw,40px);margin:14px 0 20px}
+.mc100-page .news-copy>p{font-size:14px;color:var(--muted)}
+.mc100-page .news-copy .publication-note{font-size:12px;margin-top:22px;padding-top:18px;border-top:1px solid #d2d7c7}
+/* Estados de espera compactos; espaço para conteúdo confirmado. */
+.mc100-page .program .section-top{flex-direction:row;justify-content:space-between;text-align:left;align-items:center}
+.mc100-page .status,.mc100-page .outline-label{display:inline-block;font-size:10px;border:1px solid #b6c2a7;border-radius:30px;padding:5px 12px;white-space:nowrap}
+.mc100-page .status:before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-right:7px}
+.mc100-page .empty-state{display:flex;align-items:center;gap:25px;text-align:left;padding:25px 28px;background:#eef1e5;border:1px solid #dbe1ce;border-radius:18px;margin-top:25px}
+.mc100-page .empty-symbol{font-size:40px;color:#73945e;line-height:1}
+.mc100-page .empty-state h3{font-size:23px}
+.mc100-page .empty-state p{font-size:13px;color:var(--muted);margin-top:6px;max-width:650px}
+.mc100-page .empty-state .outline-label{margin-left:auto}
+.mc100-page .partners{padding-top:5px;padding-bottom:50px}
+.mc100-page .partners .section-top h2{font-size:32px}
+.mc100-page .partners-empty{display:flex;align-items:center;justify-content:center;gap:22px;border-block:1px solid var(--line);padding:20px;margin-top:22px;text-align:center}
+.mc100-page .partners-empty p{font-size:13px;color:var(--muted);max-width:610px}
+.mc100-page .partners-list{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.mc100-page .partners-list:not(:empty){margin-top:25px}
+.mc100-page .partner{padding:22px;min-width:200px;max-width:280px;border:1px solid var(--line);border-radius:16px;text-align:center}
+.mc100-page .partner img{width:150px;height:85px;object-fit:contain;margin:auto}
+.mc100-page .partner p{font-size:11px;margin-top:12px}
+.mc100-page .agenda-item{display:grid;grid-template-columns:150px minmax(0,1fr);gap:25px;padding:24px 0;border-bottom:1px solid var(--line)}
+.mc100-page .agenda-item time{font-size:14px;font-weight:bold}
+.mc100-page .agenda-item p{font-size:13px;margin-top:8px}
+.mc100-page .news-item{padding:18px 0;border-top:1px solid var(--line)}
+.mc100-page .news-item h3{font-size:23px}
+.mc100-page .news-item p{font-size:13px}
+.mc100-page .closing{background:var(--green);color:var(--cream);padding-block:38px}
+.mc100-page .closing-inner{display:flex;justify-content:space-between;align-items:center;gap:28px}
+.mc100-page .closing h2{font-size:clamp(29px,3vw,42px);margin-top:12px}
+.mc100-page .closing h2 em{color:#e5d7a9;font-weight:normal}
+.mc100-page .button.light{background:var(--cream);color:var(--green);flex-shrink:0}
+.mc100-page .footer{display:flex;justify-content:space-between;gap:20px;padding-block:25px;font-size:11px}
+.mc100-page .footer p{color:var(--muted)}
+.mc100-page.is-integrated .site-header,.mc100-page.is-integrated .footer{display:none}
+@media(max-width:1024px){
+.mc100-page .container,.mc100-page .countdown-wrap{width:calc(100% - 48px)}
+.mc100-page .opening-bar p{font-size:11px}
+.mc100-page .header-inner{grid-template-columns:1fr 1fr;min-height:164px;padding:14px 24px}
+.mc100-page .brand{grid-column:1;width:65%;max-width:280px;padding:0}
+.mc100-page .menu-toggle{display:flex;grid-column:2;grid-row:1;justify-self:center;align-items:center;background:var(--cream);color:var(--red);border:0;padding:12px;cursor:pointer}
+.mc100-page #centenario-menu{display:none;grid-column:1 / -1;width:100%;padding-top:15px}
+.mc100-page #centenario-menu.is-open{display:flex;flex-direction:column}
+.mc100-page .nav-side{display:flex;flex-direction:column;width:100%;gap:0;padding:0}
+.mc100-page #centenario-menu a{display:block;width:100%;font-size:13px;font-weight:700;text-align:left;padding:13px 12px;border-bottom:1px solid #e3dec9;white-space:normal}
+.mc100-page .countdown-wrap{padding-inline:28px}
+.mc100-page .history,.mc100-page .news-layout{gap:32px}
+.mc100-page .history h2{font-size:37px}
+.mc100-page .section{padding-block:48px}
+.mc100-page .partners{padding-top:0}
+}
+@media(max-width:767px){
+.mc100-page .opening-bar{padding:10px}
+.mc100-page .opening-bar p{font-size:10px}
+.mc100-page .header-inner{grid-template-columns:1fr;gap:8px;padding:18px;min-height:164px}
+.mc100-page .brand{grid-column:1;grid-row:1;width:65%;max-width:260px}
+.mc100-page .brand img{height:105px}
+.mc100-page .menu-toggle{grid-column:1;grid-row:2;padding:8px}
+.mc100-page #centenario-menu{grid-column:1;grid-row:3}
+.mc100-page .history,.mc100-page .news-layout{grid-template-columns:1fr}
+.mc100-page .history-copy{max-width:560px}
+.mc100-page .photo-mosaic{width:100%;max-width:620px;justify-self:center}
+.mc100-page .news-copy{max-width:560px}
+.mc100-page .closing-inner{flex-direction:column;text-align:center}
+.mc100-page .footer{flex-direction:column;text-align:center;gap:7px}
+}
+@media(max-width:640px){
+.mc100-page .container{width:calc(100% - 36px)}
+.mc100-page .hero{padding-top:14px}
+.mc100-page .countdown-wrap{width:calc(100% - 28px);padding:24px 14px 28px;border-radius:22px;gap:22px}
+.mc100-page .countdown-emblem{width:72px;height:72px;margin-bottom:17px}
+.mc100-page .countdown-heading .eyebrow{font-size:9px;letter-spacing:.06em;padding:7px 11px}
+.mc100-page #timer-title{font-size:clamp(31px,8vw,45px)}
+.mc100-page .timer{gap:8px}
+.mc100-page .timer div{padding:15px 3px 13px;border-radius:16px;box-shadow:0 4px 0 #c6d4b8}
+.mc100-page .timer strong{font-size:clamp(23px,6.1vw,35px)}
+.mc100-page .timer span{font-size:clamp(7px,1.8vw,10px);padding:4px 6px;margin-top:10px;letter-spacing:.03em}
+.mc100-page .centenary-date{padding:14px 12px;border-radius:17px}
+.mc100-page .centenary-date>span{font-size:9px;letter-spacing:.07em}
+.mc100-page .centenary-date time{font-size:clamp(21px,5.5vw,28px)}
+.mc100-page .section-nav{gap:12px 17px;padding-block:20px;font-size:11px}
+.mc100-page .section-nav .nav-mini-logo{display:none}
+.mc100-page .section{padding-block:38px}
+.mc100-page .history h2{font-size:37px}
+.mc100-page .photo-main img{height:185px}
+.mc100-page .photo-detail img{height:115px}
+.mc100-page .photo-signature{padding:10px}
+.mc100-page .photo-signature span{font-size:10px}
+.mc100-page .photo-signature strong{font-size:22px}
+.mc100-page .news-layout{gap:25px;margin-top:25px}
+.mc100-page .film{border-radius:16px}
+.mc100-page .program .section-top{flex-direction:column;text-align:center;gap:16px}
+.mc100-page .empty-state{flex-direction:column;text-align:center;gap:13px;padding:21px 18px}
+.mc100-page .empty-state .outline-label{margin-left:0}
+.mc100-page .empty-state h3{font-size:22px}
+.mc100-page .empty-symbol{font-size:30px}
+.mc100-page .partners{padding-top:0;padding-bottom:35px}
+.mc100-page .partners-empty{flex-direction:column;padding:18px 8px;gap:14px}
+.mc100-page .partners .section-top h2{font-size:30px}
+.mc100-page .partner{width:100%;max-width:none}
+.mc100-page .agenda-item{grid-template-columns:1fr;gap:10px}
+.mc100-page .closing{padding-block:32px}
+.mc100-page .closing h2{font-size:30px}
+}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}.mc100-page .button{transition:transform .2s}.mc100-page .button:hover{transform:translateY(-2px)}}
+
+/* Vermelho em pontos de atenção, em diálogo com o verde principal. */
+.mc100-page .history h2 em{color:var(--red)}
+.mc100-page .history-copy>.eyebrow,
+.mc100-page .news .section-top .eyebrow,
+.mc100-page .editorial-label,
+.mc100-page .program .section-top .eyebrow,
+.mc100-page .partners .section-top .eyebrow{color:#b82e25}
+.mc100-page .text-link{color:#b82e25;border-bottom-color:#d78d7f}
+.mc100-page .text-link:hover{color:#95241d}
+.mc100-page .photo-signature{background:#f4e4d7;color:#a82a22}
+.mc100-page .photo-signature strong{color:#b82e25}
+.mc100-page .empty-symbol{color:var(--red)}
+.mc100-page .status:before{background:var(--red)}
+.mc100-page .status{border-color:#dab2a3;background:#fbf2e8;color:#a12b23}
+.mc100-page .outline-label{border-color:#dab2a3;background:#fbf2e8;color:#a12b23}
+.mc100-page .section-nav a:hover{color:#b82e25}
+.mc100-page .closing{border-top:4px solid var(--red)}
+.mc100-page .button.light{background:var(--red);color:#fff}
+
+/* Numerais sem serifa, com largura constante para a contagem. */
+.mc100-page .timer strong{font-family:Arial,Helvetica,sans-serif;font-weight:600;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.04em;line-height:1.1}
+
+/* Acento vermelho discreto, com a data sobre um fundo claro. */
+.mc100-page .centenary-date{background:#fffaf0;color:var(--deep);border:1px solid #dddfcc;border-top:3px solid #cf5b4e;box-shadow:0 3px 12px #205d3606}
+.mc100-page .centenary-date>span{color:#a83c31}
+.mc100-page .centenary-date small{color:#b82e25}
+
+/* Informação local legível e numerais com desenho mais arredondado. */
+@font-face{font-family:'Nunito Countdown';font-style:normal;font-weight:700;font-display:swap;src:url('assets/nunito-700.ttf') format('truetype')}
+.mc100-page .timer strong{font-family:Arial,Helvetica,sans-serif;font-weight:600;letter-spacing:-.04em;line-height:1.1}
+.mc100-page .centenary-date small{font-family:'Nunito Countdown',Arial,sans-serif;font-weight:700;font-size:14px;line-height:1.5;letter-spacing:.035em;margin-top:3px}
+@media(max-width:640px){.mc100-page .centenary-date small{font-size:12px}}
+
+/* Encerramento inteiramente na paleta verde. */
+.mc100-page .closing{background:var(--green);border-top:0}
+.mc100-page .closing .button.light{background:var(--deep);color:var(--cream);border:1px solid #92b49a}
+.mc100-page .closing h2 em{color:var(--cream)}
+
+/* Rodapé institucional seguindo o padrão do site oficial (Elementor 6825). */
+.mc100-page .footer-mosaic{height:54px;margin:12px 0 26px;background:var(--cream) url('assets/moisaico_colorido_2.svg') repeat-x center;background-size:auto 54px}
+.mc100-page .official-footer{background:var(--red);color:var(--cream);border-radius:100px 100px 0 0;padding:58px 0 0}
+.mc100-page .footer-brand{display:flex;justify-content:center}
+.mc100-page .footer-brand img{width:80px;height:80px;object-fit:contain}
+.mc100-page .footer-menu{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px 40px;padding:56px 35px 66px;border-bottom:1px solid #f8f5e5b3}
+.mc100-page .footer-menu a{font:700 14px/1.4 Arial,sans-serif;letter-spacing:1.7px;text-transform:uppercase;text-align:center}
+.mc100-page .footer-menu a:hover{color:#f3d095}
+.mc100-page .footer-info{width:calc(100% - 120px);max-width:1760px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:45px;padding:48px 0 36px;text-align:left}
+.mc100-page .footer-info h2{font:700 18px/1.4 Arial,sans-serif;text-transform:uppercase;letter-spacing:0;margin-bottom:17px;color:var(--cream)}
+.mc100-page .footer-info p{font:400 16px/1.5 Arial,sans-serif;overflow-wrap:anywhere}
+.mc100-page .footer-sponsors{text-align:center;padding:18px 50px 52px}
+.mc100-page .footer-sponsors h2{font:700 15px/1.4 Arial,sans-serif;text-transform:uppercase;letter-spacing:0;color:var(--cream);margin-bottom:28px}
+.mc100-page .footer-sponsor-logos{display:flex;align-items:center;justify-content:space-around;gap:50px;max-width:1500px;margin:auto}
+.mc100-page .footer-sponsor-logos img{object-fit:contain;height:auto}
+.mc100-page .sponsor-vale{width:310px;max-width:30%}
+.mc100-page .sponsor-brahma{width:165px;max-width:24%}
+.mc100-page .sponsor-itambe{width:165px;max-width:25%}
+.mc100-page .footer-copyright{font:400 13px/1.5 Arial,sans-serif;text-align:right;padding:12px 18px 8px}
+.mc100-page.is-integrated .official-footer,.mc100-page.is-integrated .footer-mosaic{display:none}
+@media(max-width:1024px){
+.mc100-page .footer-info{width:calc(100% - 64px);grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.mc100-page .footer-menu{gap:18px 27px;padding:36px 24px 42px}
+.mc100-page .footer-menu a{font-size:12px;letter-spacing:1.2px}
+.mc100-page .footer-info h2{font-size:16px}
+.mc100-page .footer-info p{font-size:14px}
+}
+@media(max-width:640px){
+.mc100-page .footer-mosaic{height:42px;background-size:auto 42px;margin-bottom:20px}
+.mc100-page .official-footer{border-radius:48px 48px 0 0;padding-top:35px}
+.mc100-page .footer-brand img{width:65px;height:65px}
+.mc100-page .footer-menu{display:grid;grid-template-columns:1fr 1fr;gap:19px 16px;padding:30px 22px 35px}
+.mc100-page .footer-menu a{font-size:10px;letter-spacing:1px}
+.mc100-page .footer-info{width:calc(100% - 44px);grid-template-columns:1fr;text-align:center;gap:25px;padding:32px 0 20px}
+.mc100-page .footer-info h2{font-size:15px;margin-bottom:9px}
+.mc100-page .footer-sponsors{padding:20px 22px 30px}
+.mc100-page .footer-sponsor-logos{gap:22px}
+.mc100-page .footer-copyright{font-size:10px;text-align:center;padding:12px 18px}
+}
+
+
+/* Mini contagem sem painel, inspirada no modo TV original. */
+.mc100-page .floating-countdown{position:fixed;right:20px;bottom:25px;z-index:40;width:198px;color:var(--deep);background:none;border:0;box-shadow:none;text-shadow:0 1px 3px #fffdf5,1px 0 2px #fffdf5,-1px 0 2px #fffdf5}
+.mc100-page .floating-link{display:block;padding:6px 3px;text-align:center}
+.mc100-page .floating-link:hover{text-decoration:none}
+.mc100-page .floating-heading{display:flex;align-items:center;justify-content:center;gap:7px;font-size:12px;font-weight:700}
+.mc100-page .floating-heading img{width:18px;height:18px;filter:drop-shadow(0 1px 1px #fffdf5)}
+.mc100-page .floating-units{display:flex;justify-content:center;align-items:baseline;gap:9px;margin-top:5px;white-space:nowrap}
+.mc100-page .floating-units>span{display:inline-flex;align-items:baseline;gap:2px}
+.mc100-page .floating-units b{font:600 19px/1.25 Arial,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.025em}
+.mc100-page .floating-units small{font-size:10px;font-weight:700}
+.mc100-page .floating-close{position:absolute;right:-8px;top:-11px;width:24px;height:24px;padding:0;border:0;border-radius:50%;background:transparent;color:var(--deep);font-size:18px;cursor:pointer;opacity:0;text-shadow:0 1px 2px #fffdf5}
+.mc100-page .floating-countdown:hover .floating-close,.mc100-page .floating-countdown:focus-within .floating-close{opacity:1}
+@media(max-width:640px){
+.mc100-page .floating-countdown{right:12px;bottom:calc(15px + env(safe-area-inset-bottom,0px));width:180px}
+.mc100-page .floating-heading{font-size:11px;gap:6px}
+.mc100-page .floating-heading img{width:16px;height:16px}
+.mc100-page .floating-units{gap:7px}
+.mc100-page .floating-units b{font-size:17px}
+.mc100-page .floating-close{opacity:1;right:-6px;top:-15px}
+}
+
+/* Fundo discreto para preservar a leitura da versão compacta. */
+.mc100-page .floating-countdown{width:220px;background:#fffaf0;border:1px solid #b8c9a7;border-radius:14px;box-shadow:0 5px 20px #183c2c20;text-shadow:none}
+.mc100-page .floating-link{padding:13px 12px 12px;border-radius:13px}
+.mc100-page .floating-link:hover{background:#f0f3e5}
+.mc100-page .floating-heading img{filter:none}
+.mc100-page .floating-close{right:0;top:-4px;text-shadow:none}
+@media(max-width:640px){.mc100-page .floating-countdown{width:200px}.mc100-page .floating-link{padding:12px 10px 10px}.mc100-page .floating-close{right:0;top:-5px}}
+
+/* Mini cronômetro na paleta verde. */
+.mc100-page .floating-countdown,.mc100-page .floating-countdown .floating-close{color:var(--green)}
+
+.mc100-page .floating-countdown .floating-link,
+.mc100-page .floating-countdown .floating-heading,
+.mc100-page .floating-countdown .floating-title,
+.mc100-page .floating-countdown .floating-units,
+.mc100-page .floating-countdown .floating-units b,
+.mc100-page .floating-countdown .floating-units small,
+.mc100-page .floating-countdown .floating-close{color:var(--green)}
+
+.mc100-page .floating-countdown .floating-units small{font-size:12px;line-height:1.25}
