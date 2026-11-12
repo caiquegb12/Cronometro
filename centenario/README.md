@@ -37,4 +37,8 @@ A proposta visual e os conteúdos estão sujeitos à aprovação do marketing. A
 
 ## Instagram
 
-A seção incorpora uma seleção de três publicações públicas de `@mercadocentralbh`, identificadas no site oficial. Não é um feed automático: novos posts podem ser escolhidos pelo marketing e seus links atualizados em `index.html`. Cada iframe usa a URL pública do post terminada em `/embed/`, com carregamento adiado e um link externo alternativo. A incorporação depende da disponibilidade do Instagram e das preferências do navegador do visitante. Na integração ao WordPress, pode ser substituída pelo plugin de feed já usado no site oficial.
+A galeria segue o modelo visual da Home: quatro imagens, indicação de vídeo/carrossel e botão para seguir @mercadocentralbh. As imagens e os links foram obtidos do feed do site oficial. Clicar abre a publicação correspondente no Instagram.
+
+É uma seleção estática; não faz atualização automática. Para trocar os posts, substitua as imagens em assets/instagram-*.jpg e seus links em index.html. Na integração ao WordPress, o plugin de feed já usado no site poderá alimentar esse mesmo layout.
+
+A fonte do título Instagram é Alfa Slab One, distribuída sob a licença em assets/OFL-Alfa-Slab-One.txt.
