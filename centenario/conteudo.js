@@ -17,6 +17,6 @@ window.MC100_CONTENT = {
     { titulo: 'Fecomércio MG · Sesc · Senac', logo: 'assets/patrocinador-fecomercio.png', categoria: 'Patrocinador do centenário' },
     { titulo: 'Vale', logo: 'assets/patrocinador-vale.png', categoria: 'Patrocinador do centenário' },
     { titulo: 'Brahma', logo: 'assets/patrocinador-brahma.png', categoria: 'Patrocinador do centenário' },
-    { titulo: 'Itambé', logo: 'assets/patrocinador-itambe.png', categoria: 'Patrocinador do centenário' }
+    { titulo: 'Itambé', logo: 'assets/patrocinador-itambe-ajustado.png', categoria: 'Patrocinador do centenário' }
   ]
 };

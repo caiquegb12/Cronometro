@@ -29,6 +29,7 @@ body{margin:0}
 .mc100-page .header-inner{width:100%;max-width:1600px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) clamp(220px,23vw,350px) minmax(0,1fr);align-items:center;padding:10px;min-height:178px}
 .mc100-page .brand{grid-column:2;grid-row:1;justify-self:center;width:80%;padding-bottom:19px}
 .mc100-page .brand img{width:100%;height:130px;object-fit:contain}
+
 .mc100-page #centenario-menu{display:contents}
 .mc100-page .nav-side{display:flex;justify-content:center;align-items:center;flex-wrap:nowrap;gap:clamp(8px,1vw,18px);padding:10px 8px;min-width:0}
 .mc100-page .nav-left{grid-column:1;grid-row:1}
@@ -76,6 +77,7 @@ body{margin:0}
 .mc100-page .news-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;margin-top:32px}
 .mc100-page .film{min-width:0;background:transparent;overflow:hidden}
 .mc100-page .film video{width:100%;aspect-ratio:16/9;object-fit:contain;background:transparent;filter:brightness(1.12);mix-blend-mode:multiply}
+.mc100-page .film .brand-animation{width:100%;aspect-ratio:16/9;object-fit:contain;mix-blend-mode:multiply}
 .mc100-page .news-copy{text-align:center;max-width:460px;margin:auto}
 .mc100-page .editorial-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5b6e49}
 .mc100-page .news-copy h3{font-size:clamp(29px,3vw,40px);margin:14px 0 20px}
@@ -227,6 +229,7 @@ body{margin:0}
 .mc100-page .official-footer{background:var(--red);color:var(--cream);border-radius:100px 100px 0 0;padding:58px 0 0}
 .mc100-page .footer-brand{display:flex;justify-content:center}
 .mc100-page .footer-brand img{width:80px;height:80px;object-fit:contain}
+.mc100-page .official-footer .footer-brand img{content:url("assets/identidade/marca-vertical-escura.png")}
 .mc100-page .footer-menu{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px 40px;padding:56px 35px 66px;border-bottom:1px solid #f8f5e5b3}
 .mc100-page .footer-menu a{font:700 14px/1.4 Arial,sans-serif;letter-spacing:1.7px;text-transform:uppercase;text-align:center}
 .mc100-page .footer-menu a:hover{color:#f3d095}
@@ -359,3 +362,59 @@ body{margin:0}
 }
 
 @media(max-width:480px){.mc100-page .agenda-date{flex-direction:column;align-items:flex-start;gap:6px}}
+
+/* Identidade oficial: arquivos recortados, proporções preservadas. */
+.mc100-page .official-header .brand img{content:normal;width:100%;height:auto;max-height:130px;object-fit:contain}
+.mc100-page .official-footer .footer-brand img{content:normal;width:250px;height:auto;max-width:75vw;object-fit:contain}
+.mc100-page .countdown-emblem.centenary-emblem{width:240px;max-width:75%;}
+.mc100-page .centenary-emblem img{width:100%;height:auto;}
+.mc100-page .film .brand-animation{filter:brightness(1.12);mix-blend-mode:multiply;height:auto;}
+@media(max-width:640px){.mc100-page .countdown-emblem.centenary-emblem{width:200px}.mc100-page .official-footer .footer-brand img{width:210px}}
+
+.mc100-page .section-nav .nav-mini-logo{width:32px;height:22px;object-fit:contain}
+.mc100-page .floating-heading img{width:34px;height:22px;object-fit:contain;filter:none}
+
+/* Navegação e contador compacto: vinho e dourado da identidade. */
+.mc100-page .section-nav{color:#79372f}
+.mc100-page .section-nav a:hover{color:#a16f29}
+.mc100-page .floating-countdown{background:#fff8e9;border-color:#cbb184;box-shadow:0 5px 20px #63362720}
+.mc100-page .floating-countdown .floating-link,
+.mc100-page .floating-countdown .floating-heading,
+.mc100-page .floating-countdown .floating-title,
+.mc100-page .floating-countdown .floating-units,
+.mc100-page .floating-countdown .floating-units b,
+.mc100-page .floating-countdown .floating-close{color:#79372f}
+.mc100-page .floating-countdown .floating-units small{color:#826027}
+.mc100-page .floating-link:hover{background:#f5e9d2}
+
+.mc100-page .brand-tagline{display:block;margin-top:16px;color:#8c692e;font:normal 12px/1.5 Georgia,serif;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+@media(max-width:640px){.mc100-page .brand-tagline{font-size:10px;letter-spacing:.09em}}
+
+/* Marcas pequenas e enquadramento dos patrocinadores. */
+.mc100-page .header-tagline{display:block;margin-top:10px;text-align:center;color:#8c692e;font:normal 10px/1.5 Georgia,serif;letter-spacing:.09em;text-transform:uppercase}
+.mc100-page .nav-separator{color:#a58042;font-size:8px;line-height:1}
+.mc100-page .countdown-emblem.centenary-emblem{width:220px}
+.mc100-page .brand-tagline{font-size:11px;letter-spacing:.08em}
+.mc100-page .partner img{width:170px;height:100px;object-fit:contain;transform:none}
+.mc100-page .partner img[src$="patrocinador-itambe-ajustado.png"]{width:155px;height:100px;object-fit:contain;transform:none}
+@media(max-width:640px){.mc100-page .nav-separator{display:none}.mc100-page .countdown-emblem.centenary-emblem{width:190px}.mc100-page .brand-tagline{font-size:10px}.mc100-page .header-tagline{font-size:9px;letter-spacing:.04em}}
+
+/* Alinhamento da navegação e das marcas. */
+.mc100-page .section-nav{gap:14px 26px;align-items:center;justify-content:center}
+.mc100-page .section-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:32px;line-height:1.4;border-bottom:1px solid transparent}
+.mc100-page .section-nav .nav-mini-logo{display:block;width:20px;height:20px;object-fit:contain;flex:0 0 20px}
+.mc100-page .partners-list{align-items:stretch}
+.mc100-page .partner{align-items:center}
+.mc100-page .partner p{width:100%;min-height:2em}
+.mc100-page .program .section-top>div{min-width:0}
+.mc100-page .program .status{flex-shrink:0}
+@media(max-width:800px){.mc100-page .program .section-top{flex-direction:column;align-items:center;text-align:center;gap:16px}}
+@media(max-width:640px){.mc100-page .section-nav{gap:8px 14px}.mc100-page .section-nav .nav-mini-logo{display:none}}
+
+.mc100-page .section-nav .nav-mini-logo{width:24px;height:24px;flex-basis:24px}
+@media(max-width:640px){.mc100-page .section-nav .nav-mini-logo{display:none}}
+
+.mc100-page .countdown-emblem.centenary-emblem{width:180px}
+.mc100-page .section-nav .nav-mini-logo{width:40px;height:24px;flex-basis:40px;object-fit:contain}
+@media(max-width:640px){.mc100-page .countdown-emblem.centenary-emblem{width:160px}.mc100-page .section-nav .nav-mini-logo{display:none}}
+@media(max-width:360px){.mc100-page .timer span{font-size:8px;padding:4px 6px;letter-spacing:0}.mc100-page .timer{gap:8px}}
