@@ -7,7 +7,7 @@ window.MC100_CONTENT = {
     { titulo: 'Atendimento Papai Noel', data: '2026-12-12T10:00:00-03:00', horario: '10:00 às 15:00', local: 'Espaço Cultural 4 · Natal da Cemig', descricao: 'Pausa das 12h30 às 13h30, totalizando quatro horas de atendimento.' },
     { titulo: 'Oficinas de Natal', data: '2026-12-12T10:00:00-03:00', horario: '10:00 às 15:00', local: 'Espaço Cultural 4 · Natal da Cemig', descricao: 'Pinturinha facial, enfeites natalinos e estação de embrulhos. Pausa de 40 minutos.' },
     { titulo: 'Lançamento Bares com Alma', data: '2026-12-12T10:30:00-03:00', horario: '10:30 às 12:00', local: 'Espaço Cultural 1 · Setor Augusto de Lima' },
-    { titulo: 'Apresentação do Coral Black to Black', data: '2026-12-12T11:30:00-03:00', horario: '11:30 às 12:10', local: 'Espaço Cultural 4 · Natal da Cemig' },
+    { titulo: 'Apresentação do coral FCS', data: '2026-12-12T11:30:00-03:00', horario: '11:30 às 12:10', local: 'Espaço Cultural 4 · Natal da Cemig' },
     { titulo: 'Mil dias para o centenário', data: '2026-12-12T12:12:00-03:00', local: 'Espaço Cultural 1 · Setor Augusto de Lima', descricao: 'Apresentação do teaser, inauguração do contador e apresentação da nova marca Mercado Central 100 anos. Parabéns para BH.' },
     { titulo: 'Lançamento do livro Conhecer para Cuidar — Mercado Central 100 anos', data: '2026-12-12T13:00:00-03:00', local: 'Espaço Cultural 1 · Setor Augusto de Lima' },
     { titulo: 'Encerramento com Coral do Sesc', data: '2026-12-12T14:00:00-03:00', local: 'Espaço Cultural 1 · Setor Augusto de Lima' }
