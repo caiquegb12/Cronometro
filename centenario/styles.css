@@ -418,3 +418,4 @@ body{margin:0}
 .mc100-page .section-nav .nav-mini-logo{width:40px;height:24px;flex-basis:40px;object-fit:contain}
 @media(max-width:640px){.mc100-page .countdown-emblem.centenary-emblem{width:160px}.mc100-page .section-nav .nav-mini-logo{display:none}}
 @media(max-width:360px){.mc100-page .timer span{font-size:8px;padding:4px 6px;letter-spacing:0}.mc100-page .timer{gap:8px}}
+.mc100-page .centenary-emblem .brand-tagline{position:relative;left:50%;transform:translateX(-50%);width:max-content;max-width:none;text-align:center}
