@@ -65,31 +65,22 @@
   inviteDialog.append(closeInvite, inviteImage); root.append(inviteDialog);
   closeInvite.addEventListener('click', () => inviteDialog.close());
   inviteDialog.addEventListener('click', event => { if (event.target === inviteDialog) inviteDialog.close(); });
-  const eventDialog = make('dialog', '', 'event-dialog');
-  eventDialog.setAttribute('aria-labelledby', 'event-detail-title');
-  const eventClose = make('button', 'Fechar ×', 'event-close'); eventClose.type = 'button';
-  const eventBody = make('div', '', 'event-body');
-  eventDialog.append(eventClose, eventBody); root.append(eventDialog);
-  eventClose.addEventListener('click', () => eventDialog.close());
-  eventDialog.addEventListener('click', e => { if (e.target === eventDialog) eventDialog.close(); });
-  eventDialog.addEventListener('close', () => { document.body.style.overflow = ''; });
-  function openEvent(item, date) {
-    eventBody.replaceChildren();
-    const title = make('h2', item.titulo); title.id = 'event-detail-title';
-    eventBody.append(make('p', '12 de dezembro de 2026 · Programação do centenário', 'eyebrow'), title);
-    const hour = item.horario || new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' }).format(date);
-    eventBody.append(make('p', hour, 'event-hour'), make('p', item.local, 'event-place'));
-    if (item.descricao) eventBody.append(make('p', item.descricao));
+  let eventSequence = 0;
+  function buildEventDetails(item) {
+    const eventBody = make('div', '', 'event-body event-expansion');
     const photo = safeUrl(item.fotoLocal);
     if (photo) {
       const figure = make('figure'); const img = make('img'); img.src = photo; img.alt = item.fotoAlt || item.local;
       figure.append(img, make('figcaption', item.fotoAlt || item.local));
-      img.addEventListener('error', () => figure.remove(), { once: true }); eventBody.append(figure);
+      eventBody.classList.add('with-photo');
+      img.addEventListener('error', () => { figure.remove(); eventBody.classList.remove('with-photo'); }, { once: true }); eventBody.append(figure);
     }
-    if (item.acesso) eventBody.append(make('p', item.acesso));
-    eventBody.append(make('p', 'Mercado Central · Av. Augusto de Lima, 744, Centro, Belo Horizonte — MG', 'event-address'));
-    link(eventBody, item.url, 'Conheça o espaço ↗');
-    document.body.style.overflow = 'hidden'; eventDialog.showModal(); eventDialog.scrollTop = 0;
+    const info = make('div', '', 'event-venue-info');
+    info.append(make('span', 'Local do evento', 'event-venue-label'), make('h4', item.local));
+    if (item.acesso) { info.append(make('h5', 'Como chegar'), make('p', item.acesso)); }
+    info.append(make('h5', 'Endereço'), make('p', 'Mercado Central · Av. Augusto de Lima, 744, Centro, Belo Horizonte — MG', 'event-address'));
+    link(info, item.url, 'Conheça o espaço ↗'); eventBody.append(info);
+    return eventBody;
   }
   render('agenda', '#agenda-list', '#agenda-empty', item => {
     const article = make('article', '', 'agenda-item');
@@ -116,11 +107,17 @@
       button.addEventListener('click', () => { inviteImage.src = imageUrl; inviteImage.alt = image.alt; inviteDialog.showModal(); });
       article.classList.add('has-invite'); article.append(button);
     }
-    const details = make('button', 'Ver informações do evento →', 'event-details-button'); details.type = 'button';
-    details.setAttribute('aria-haspopup', 'dialog'); details.setAttribute('aria-label', `Ver informações: ${item.titulo}`);
-    details.addEventListener('click', () => openEvent(item, date)); copy.append(details);
-    article.classList.add('event-card');
-    article.addEventListener('click', e => { if (!e.target.closest('button, a')) details.click(); });
+    const panel = buildEventDetails(item); panel.id = `event-expansion-${++eventSequence}`; panel.hidden = true;
+    const details = make('button', 'Ver mais ↓', 'event-details-button'); details.type = 'button';
+    details.setAttribute('aria-expanded', 'false'); details.setAttribute('aria-controls', panel.id);
+    details.setAttribute('aria-label', `Ver mais: ${item.titulo}`);
+    details.addEventListener('click', () => {
+      const open = details.getAttribute('aria-expanded') !== 'true';
+      details.setAttribute('aria-expanded', String(open)); panel.hidden = !open;
+      details.textContent = open ? 'Ver menos ↑' : 'Ver mais ↓';
+      details.setAttribute('aria-label', `${open ? 'Ver menos' : 'Ver mais'}: ${item.titulo}`);
+    });
+    copy.append(details); article.append(panel);
     return article;
   });
   render('novidades', '#news-list', '#news-empty', item => {
