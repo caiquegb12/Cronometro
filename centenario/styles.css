@@ -480,3 +480,13 @@ body{margin:0}
 .mc100-page .event-body{padding-bottom:max(24px,env(safe-area-inset-bottom))}
 }
 @media(prefers-reduced-motion:reduce){.mc100-page *{scroll-behavior:auto!important;transition:none!important}}
+
+/* Em telas intermediárias, exibir os links abaixo da marca. */
+@media(min-width:768px) and (max-width:1024px){
+.mc100-page .header-inner{grid-template-columns:1fr;gap:12px;padding:20px 24px}
+.mc100-page .brand{grid-column:1;grid-row:1;width:260px;max-width:100%;justify-self:center}
+.mc100-page .menu-toggle{display:none}
+.mc100-page #centenario-menu,.mc100-page #centenario-menu.is-open{display:flex;grid-column:1;grid-row:2;flex-direction:column;gap:4px;padding-top:4px}
+.mc100-page .nav-side{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:4px 16px}
+.mc100-page #centenario-menu a{width:auto;padding:8px 0;border-bottom:0;text-align:center;font-size:11px;white-space:nowrap}
+}
