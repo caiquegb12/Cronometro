@@ -419,3 +419,64 @@ body{margin:0}
 @media(max-width:640px){.mc100-page .countdown-emblem.centenary-emblem{width:160px}.mc100-page .section-nav .nav-mini-logo{display:none}}
 @media(max-width:360px){.mc100-page .timer span{font-size:8px;padding:4px 6px;letter-spacing:0}.mc100-page .timer{gap:8px}}
 .mc100-page .centenary-emblem .brand-tagline{position:relative;left:50%;transform:translateX(-50%);width:max-content;max-width:none;text-align:center}
+
+.mc100-page .event-card{cursor:pointer}
+.mc100-page .event-details-button{display:inline-flex;min-height:44px;align-items:center;margin-top:12px;padding:8px 0;border:0;border-bottom:1px solid #c7a28d;background:transparent;color:#92251f;font-size:13px;font-weight:700;text-align:left;cursor:pointer}
+.mc100-page .event-dialog{box-sizing:border-box;width:min(740px,92vw);max-height:90dvh;padding:0;border:1px solid #e4d4b7;border-radius:22px;background:#fffaf1;color:#502e28;overflow:auto;overscroll-behavior:contain}
+.mc100-page .event-dialog::backdrop{background:#201711b8}
+.mc100-page .event-close{position:sticky;top:0;z-index:1;display:block;width:100%;min-height:52px;padding:12px 24px;border:0;background:#a92521;color:white;text-align:right;cursor:pointer}
+.mc100-page .event-body{padding:28px}
+.mc100-page .event-body h2{font-size:clamp(25px,4vw,34px);line-height:1.2;margin:12px 0 20px}
+.mc100-page .event-body p{margin-top:12px}
+.mc100-page .event-hour{color:#92251f;font-weight:700;font-size:20px}
+.mc100-page .event-place{font-weight:700}
+.mc100-page .event-body figure{margin:24px 0}
+.mc100-page .event-body figure img{width:100%;height:auto;border-radius:12px}
+.mc100-page .event-body figcaption,.mc100-page .event-address{font-size:12px;color:#705c50}
+@media(max-width:640px){.mc100-page .event-dialog{width:calc(100% - 16px);max-width:none;max-height:94dvh;border-radius:16px}.mc100-page .event-body{padding:22px 18px}.mc100-page .event-body .eyebrow{font-size:10px}.mc100-page .event-details-button{width:100%}}
+
+.mc100-page .event-details-button{display:flex;width:fit-content;gap:10px;min-height:44px;margin-top:18px;padding:10px 16px;border:1px solid #d6ad98;border-radius:10px;background:#f9e3d8;color:#92251f;line-height:1.4;text-decoration:none}
+.mc100-page .event-details-button:hover{background:#f2d2c1;border-color:#ad6855}
+@media(max-width:640px){.mc100-page .event-details-button{width:100%;justify-content:center;text-align:center}}
+
+
+/* Datas dos eventos: apresentação centralizada em todos os tamanhos. */
+.mc100-page .agenda-date{align-self:center;display:flex;flex-direction:column;align-items:stretch;justify-content:center;text-align:center;gap:14px;padding:20px 18px;background:linear-gradient(145deg,#fbe9db,#f5ddcd);border:1px solid #efd0bc;border-radius:14px;box-shadow:inset 0 3px 0 #be4b38}
+.mc100-page .agenda-calendar{display:flex;justify-content:center;align-items:center}
+.mc100-page .agenda-calendar b{font:700 16px/1.4 Arial,sans-serif;color:#92251f;white-space:nowrap}
+.mc100-page .agenda-schedule{display:flex;flex-direction:column;align-items:center;gap:5px;padding-top:12px;border-top:1px solid #dfb7a1}
+.mc100-page .agenda-schedule small{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#8e5a49}
+.mc100-page .agenda-schedule strong{font-size:18px;line-height:1.4;white-space:nowrap;color:#92251f}
+/* Programação anual. */
+.mc100-page .centenary-plan{background:#f4ebda;border-block:1px solid #e4d4b7}
+.mc100-page .centenary-plan>.container>.section-top{gap:16px;max-width:800px;margin:0 auto 28px;padding:10px 0 18px}
+.mc100-page .centenary-plan .section-top h2{font:700 clamp(32px,3.4vw,44px)/1.2 'Nunito Countdown',Arial,sans-serif;letter-spacing:-.025em;color:#79372f;margin-top:12px;text-wrap:balance}
+.mc100-page .centenary-plan .eyebrow{color:#92251f;font-size:12px;letter-spacing:.13em}
+.mc100-page .centenary-plan .plan-range{display:inline-block;padding:6px 0 10px;border-bottom:2px solid #bc9660;font:700 17px/1.4 'Nunito Countdown',Arial,sans-serif;color:#79372f;letter-spacing:.01em}
+.mc100-page .centenary-plan .section-top .small-note{max-width:570px;font-size:14px;line-height:1.7;color:#705c50}
+.mc100-page .centenary-plan-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:20px;margin-top:32px}
+.mc100-page .centenary-plan-card{min-width:0;padding:28px;border:1px solid #e2d2b5;border-top:3px solid #bc9660;border-radius:16px;background:#fffaf1;box-shadow:0 4px 16px #63362708}
+.mc100-page .centenary-plan-card .plan-period{color:#92251f;font:700 12px/1.5 Arial,sans-serif;letter-spacing:.015em;margin-bottom:12px}
+.mc100-page .centenary-plan-card h3{font:700 24px/1.3 'Nunito Countdown',Arial,sans-serif;letter-spacing:-.015em;color:#502e28;margin-bottom:12px;overflow-wrap:break-word}
+.mc100-page .centenary-plan-card>p:last-child{font:400 15px/1.7 Arial,sans-serif;color:#705c50;max-width:58ch}
+.mc100-page .centenary-plan-card:last-child{background:#92251f;border-color:#92251f}
+.mc100-page .centenary-plan-card:last-child h3,.mc100-page .centenary-plan-card:last-child p{color:#fff7e9}
+.mc100-page .plan-note{text-align:center;font-size:12px;color:#705c50;margin-top:24px}
+/* Interações e leitura. */
+.mc100-page .button,.mc100-page .event-details-button{min-height:44px}
+.mc100-page .event-close:focus-visible{outline:3px solid #fff7e9;outline-offset:-6px}
+.mc100-page .event-body h2{font-family:'Nunito Countdown',Arial,sans-serif;font-weight:700;overflow-wrap:break-word}
+.mc100-page .program .section-top .eyebrow{color:#fff0df}
+.mc100-page .event-dialog{scrollbar-gutter:stable}
+@media(max-width:800px){.mc100-page .agenda-date{align-self:stretch;padding:16px}}
+@media(max-width:640px){
+.mc100-page .centenary-plan-grid{grid-template-columns:1fr;gap:16px;margin-top:24px}
+.mc100-page .centenary-plan-card{padding:22px}
+.mc100-page .centenary-plan-card h3{font-size:22px}
+.mc100-page .centenary-plan>.container>.section-top{gap:14px;margin-bottom:22px;padding:4px 0 10px}
+.mc100-page .centenary-plan .section-top h2{font-size:32px}
+.mc100-page .centenary-plan .eyebrow{font-size:10px;letter-spacing:.09em}
+.mc100-page .centenary-plan .plan-range{font-size:16px}
+.mc100-page .event-body{padding-bottom:max(24px,env(safe-area-inset-bottom))}
+}
+@media(prefers-reduced-motion:reduce){.mc100-page *{scroll-behavior:auto!important;transition:none!important}}
